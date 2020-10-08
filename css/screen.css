@@ -819,65 +819,44 @@ more padding on the right to avoid overlap
     Visually change a checkbox into a toggle
 */
 
-.c-custom-toggle-list {
-    --toggle-list-borderColor: var(--global-color-neutral-xxx-light);
-    margin-bottom: var(--global-whitespace);
-}
 
-.c-custom-toggle-list__item {
-    margin-bottom: calc(var(--global-whitespace) / 2);
-}
-
-.c-custom-toggle-list__item + .c-custom-toggle-list__item {
-    padding-top: calc(var(--global-whitespace) / 2);
-    border-top: 1px solid var(--toggle-list-borderColor);
-}
-
-.c-custom-toggle {
-    --toggle-backgroundColor: var(--global-color-neutral-xxxx-light);
-    --toggle-checked-borderColor: var(--global-color-alpha-dark);
-    --toggle-checked-backgroundColor: var(--global-color-alpha);
-    --toggle-focus-boxShadow: var(--global-input-focus-boxShadow);
-    --toggle__switch-backgroundColor: White;
-    --toggle__switch-checked-backgroundColor: White;
-    --toggle__switch-transition: all var(--global-transitionTiming-alpha);
-    display: flex;
-    align-items: center;
-}
-
-.c-custom-toggle--inverted {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-
-.c-custom-toggle__fake-input {
-    display: block;
+.c-toggle-password__icon{
+    width: 24px;
     height: 24px;
-    width: 48px;
-    margin-right: var(--global-whitespace-md);
-    background-color: var(--toggle-backgroundColor);
-    border-radius: 32px;
-    border: var(--global-borderWidth) solid var(--toggle-borderColor, var(--global-input-borderColor));
-    transition: all var(--global-transitionTiming-alpha);
-    box-shadow: var(--toggle-boxShadow, 0);
+    fill: var(--global-color-neutral-dark);
 }
 
-.c-custom-toggle--inverted .c-custom-toggle__fake-input {
-    margin-right: 0;
+.c-toggle-password__icon--hide{
+    display: none;
 }
 
-.c-custom-toggle__fake-input::after {
+.c-password-container{
     position: relative;
     display: block;
-    content: '';
-    height: 22px;
-    width: 22px;
-    border-radius: 22px;
-    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
-    background-color: var(--toggle__switch-backgroundColor);
-    transition: var(--toggle__switch-transition);
 }
 
+.c-toggle-password{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.c-toggle-password__label{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 8px;
+}
+
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--hide{
+    display: block;
+}
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--show{
+    display: none;
+}
 /* focused and active state */
 
 .c-option--hidden:focus + .c-custom-toggle,
