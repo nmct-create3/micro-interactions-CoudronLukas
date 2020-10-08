@@ -930,6 +930,52 @@ more padding on the right to avoid overlap
     fill: var(--global-color-neutral-x-light);
 }
 
+
+/*
+!!! PASSWORD !!!
+*/
+
+.c-toggle-password-container{
+    display: block;
+    position: relative;
+}
+
+.c-toggle-password__icon{
+    width: 24px;
+    height: 24px;
+    fill: var(--global-color-neutral-light);
+}
+.c-toggle-password__icon--hide{
+    display: none;
+}
+
+.c-toggle-password__label{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 8px;
+}
+
+.c-toggle-password__checkbox{
+    display: none;
+}
+
+.c-input-password{
+    position: relative;
+    display: block;
+}
+
+
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--hide
+{
+    display: block;
+}
+
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--show
+{
+    display: none;
+}
+
 /*
     Component: Password Toggle
     ---
